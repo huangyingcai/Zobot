@@ -1,6 +1,20 @@
 #include "STC12C5410AD.H"
 
 #define MESSAGE_END 'Z'
+ 
+
+/*
+	串口信息开头标识：
+	A：左前
+	B：左后
+	C：右前
+	D：右后
+
+	串口信息结束标识：
+	Z
+
+*/
+
 
 sbit LED = P2 ^ 1;
 sbit ENA = P2 ^ 2;
@@ -8,6 +22,7 @@ sbit ENA = P2 ^ 2;
 volatile unsigned char SPEED;
 volatile unsigned char _cReceive;
 volatile char _pReceive[255];
+
 
 
 
@@ -23,6 +38,7 @@ void InitUART  (void)
 	ES = 1; //允许串行口中断
 	EA = 1; //开启总中断
 }
+
 
 
 void PWM_INIT (void) {
