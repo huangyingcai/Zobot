@@ -1,0 +1,250 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/06/2012  22:10:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj TO Zobot
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51L.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?IMUL)
+
+
+LINK MAP OF MODULE:  Zobot (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0010H                  *** GAP ***
+            REG     0018H     0008H     ABSOLUTE     "REG BANK 3"
+            IDATA   0020H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0101H     UNIT         ?XD?MAIN
+            XDATA   0101H     0002H     UNIT         _XDATA_GROUP_
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001FH     UNIT         ?PR?MAIN?MAIN
+                    0022H     0001H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     00B2H     UNIT         ?PR?SERIAL_INTERRUPT?MAIN
+            CODE    00D8H     0027H     UNIT         ?PR?PWM_INIT?MAIN
+            CODE    00FFH     0015H     UNIT         ?PR?INITUART?MAIN
+            CODE    0114H     0012H     UNIT         ?C?LIB_CODE
+            CODE    0126H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0132H     0005H     UNIT         ?PR?_PWM0_SET?MAIN
+            CODE    0137H     0005H     UNIT         ?PR?_PWM1_SET?MAIN
+            CODE    013CH     0005H     UNIT         ?PR?_PWM2_SET?MAIN
+            CODE    0141H     0005H     UNIT         ?PR?_PWM3_SET?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   Zobot (MAIN)
+
+
+SEGMENT                             XDATA_GROUP
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?PR?SERIAL_INTERRUPT?MAIN         0101H    0002H
+  +--> ?PR?_PWM3_SET?MAIN
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                     -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:10:27  PAGE 2
+
+
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                     -----    -----
+  +--> ?PR?INITUART?MAIN
+  +--> ?PR?PWM_INIT?MAIN
+  +--> ?PR?_PWM1_SET?MAIN
+  +--> ?PR?_PWM3_SET?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  Zobot (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:00D8H         PUBLIC        PWM_INIT
+  X:0000H         PUBLIC        _cReceive
+  D:00F9H         PUBLIC        CH
+  D:00A8H         PUBLIC        IE
+  D:00E9H         PUBLIC        CL
+  D:00FAH         PUBLIC        CCAP0H
+  D:00FBH         PUBLIC        CCAP1H
+  D:00FCH         PUBLIC        CCAP2H
+  D:00FDH         PUBLIC        CCAP3H
+  B:00D8H.6       PUBLIC        CR
+  D:00EAH         PUBLIC        CCAP0L
+  D:00EBH         PUBLIC        CCAP1L
+  D:00DAH         PUBLIC        CCAPM0
+  D:00ECH         PUBLIC        CCAP2L
+  D:00DBH         PUBLIC        CCAPM1
+  X:0001H         PUBLIC        _pReceive
+  B:00A8H.4       PUBLIC        ES
+  D:00EDH         PUBLIC        CCAP3L
+  D:00DCH         PUBLIC        CCAPM2
+  D:00B8H         PUBLIC        IP
+  D:00DDH         PUBLIC        CCAPM3
+  B:0098H.0       PUBLIC        RI
+  D:00D9H         PUBLIC        CMOD
+  D:00D8H         PUBLIC        CCON
+  C:0003H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:00FFH         PUBLIC        InitUART
+  B:00A0H.2       PUBLIC        ENA
+  B:00A0H.1       PUBLIC        LED
+  B:0088H.6       PUBLIC        TR1
+  C:0026H         PUBLIC        serial_interrupt
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:10:27  PAGE 3
+
+
+  B:0098H.4       PUBLIC        REN
+  D:00C8H         PUBLIC        T2CON
+  C:0132H         PUBLIC        _PWM0_SET
+  X:0100H         PUBLIC        SPEED
+  C:0137H         PUBLIC        _PWM1_SET
+  C:013CH         PUBLIC        _PWM2_SET
+  C:0141H         PUBLIC        _PWM3_SET
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          INITUART
+  C:00FFH         LINE#         14
+  C:00FFH         LINE#         15
+  C:00FFH         LINE#         17
+  C:0102H         LINE#         18
+  C:0105H         LINE#         19
+  C:0108H         LINE#         20
+  C:010BH         LINE#         21
+  C:010DH         LINE#         22
+  C:010FH         LINE#         23
+  C:0111H         LINE#         24
+  C:0113H         LINE#         25
+  -------         ENDPROC       INITUART
+  -------         PROC          PWM_INIT
+  C:00D8H         LINE#         28
+  C:00D8H         LINE#         29
+  C:00DBH         LINE#         30
+  C:00DEH         LINE#         31
+  C:00E0H         LINE#         32
+  C:00E3H         LINE#         33
+  C:00E5H         LINE#         34
+  C:00E7H         LINE#         36
+  C:00EAH         LINE#         37
+  C:00ECH         LINE#         38
+  C:00EEH         LINE#         40
+  C:00F1H         LINE#         41
+  C:00F3H         LINE#         42
+  C:00F5H         LINE#         44
+  C:00F8H         LINE#         45
+  C:00FAH         LINE#         46
+  C:00FCH         LINE#         48
+  C:00FEH         LINE#         49
+  -------         ENDPROC       PWM_INIT
+  -------         PROC          _PWM0_SET
+  D:0007H         SYMBOL        a
+  C:0132H         LINE#         51
+  C:0132H         LINE#         52
+  C:0134H         LINE#         53
+  C:0136H         LINE#         54
+  -------         ENDPROC       _PWM0_SET
+  -------         PROC          _PWM1_SET
+  D:0007H         SYMBOL        a
+  C:0137H         LINE#         57
+  C:0137H         LINE#         58
+  C:0139H         LINE#         59
+  C:013BH         LINE#         60
+  -------         ENDPROC       _PWM1_SET
+  -------         PROC          _PWM2_SET
+  D:0007H         SYMBOL        a
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:10:27  PAGE 4
+
+
+  C:013CH         LINE#         62
+  C:013CH         LINE#         63
+  C:013EH         LINE#         64
+  C:0140H         LINE#         65
+  -------         ENDPROC       _PWM2_SET
+  -------         PROC          _PWM3_SET
+  D:0007H         SYMBOL        a
+  C:0141H         LINE#         67
+  C:0141H         LINE#         68
+  C:0143H         LINE#         69
+  C:0145H         LINE#         70
+  -------         ENDPROC       _PWM3_SET
+  -------         PROC          MAIN
+  C:0003H         LINE#         72
+  C:0003H         LINE#         73
+  C:0003H         LINE#         74
+  C:0005H         LINE#         75
+  C:0008H         LINE#         76
+  C:000BH         LINE#         78
+  C:0010H         LINE#         79
+  C:0012H         LINE#         80
+  C:0016H         LINE#         82
+  C:001BH         LINE#         84
+  C:0020H         LINE#         86
+  -------         ENDPROC       MAIN
+  -------         PROC          SERIAL_INTERRUPT
+  -------         DO            
+  D:001BH         SYMBOL        i
+  X:0101H         SYMBOL        j
+  -------         ENDDO         
+  C:0026H         LINE#         90
+  C:0033H         LINE#         93
+  C:003AH         LINE#         95
+  C:004CH         LINE#         96
+  C:005DH         LINE#         97
+  C:0062H         LINE#         98
+  C:0062H         LINE#         100
+  C:0074H         LINE#         102
+  C:007BH         LINE#         103
+  C:0080H         LINE#         104
+  C:008CH         LINE#         105
+  C:008CH         LINE#         106
+  C:00A9H         LINE#         107
+  C:00C0H         LINE#         108
+  C:00C3H         LINE#         109
+  C:00CBH         LINE#         110
+  C:00CBH         LINE#         112
+  C:00CDH         LINE#         113
+  -------         ENDPROC       SERIAL_INTERRUPT
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?IMUL
+  C:0114H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:10:27  PAGE 5
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+
+Program Size: data=17.0 xdata=259 code=325
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

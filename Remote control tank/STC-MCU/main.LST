@@ -1,0 +1,141 @@
+C51 COMPILER V9.00   MAIN                                                                  12/06/2012 22:10:27 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "STC12C5410AD.H"
+   2          
+   3          #define MESSAGE_END 'Z'
+   4          
+   5          sbit LED = P2 ^ 1;
+   6          sbit ENA = P2 ^ 2;
+   7          
+   8          volatile unsigned char SPEED;
+   9          volatile unsigned char _cReceive;
+  10          volatile char _pReceive[255];
+  11          
+  12          
+  13          
+  14          void InitUART  (void)
+  15          {
+  16   1              //AUXR1 |= 0x80; //切换第二个串口，后期采用STC12C5412AD，使用默认的串口不再切换
+  17   1              SCON = 0x50;
+  18   1              TMOD|= 0x20; //定时器1工作方式
+  19   1              TH1 = 0xFD;
+  20   1              TL1 = 0xFD;
+  21   1              TR1 = 1;
+  22   1              REN = 1;
+  23   1              ES = 1; //允许串行口中断
+  24   1              EA = 1; //开启总中断
+  25   1      }
+  26          
+  27          
+  28          void PWM_INIT (void) {
+  29   1              CMOD = 0x02;
+  30   1              CL = 0x00;
+  31   1              CH = 0x00;
+  32   1              CCAPM0 = 0x42; 
+  33   1              CCAP0L = 0x00;
+  34   1              CCAP0H = 0x00;
+  35   1      
+  36   1              CCAPM1 = 0x42; 
+  37   1              CCAP1L = 0x00;
+  38   1              CCAP1H = 0x00;
+  39   1      
+  40   1              CCAPM2 = 0x42; 
+  41   1              CCAP2L = 0x00;
+  42   1              CCAP2H = 0x00;
+  43   1      
+  44   1              CCAPM3 = 0x42; 
+  45   1              CCAP3L = 0x00;
+  46   1              CCAP3H = 0x00;
+  47   1      
+  48   1              CR = 1;
+  49   1      }
+  50          
+  51          void PWM0_SET (unsigned char a /* 0~255 */) {
+  52   1              CCAP0L = a;
+  53   1              CCAP0H = a;
+  54   1      }
+  55          
+C51 COMPILER V9.00   MAIN                                                                  12/06/2012 22:10:27 PAGE 2   
+
+  56          
+  57          void PWM1_SET (unsigned char a /* 0~255 */) {
+  58   1              CCAP1L = a;
+  59   1              CCAP1H = a;
+  60   1      }
+  61          
+  62          void PWM2_SET (unsigned char a /* 0~255 */) {
+  63   1              CCAP2L = a;
+  64   1              CCAP2H = a;
+  65   1      }
+  66          
+  67          void PWM3_SET (unsigned char a /* 0~255 */) {
+  68   1              CCAP3L = a;
+  69   1              CCAP3H = a;
+  70   1      }
+  71          
+  72          void main (void)
+  73          {
+  74   1              ENA = 1;
+  75   1              InitUART();
+  76   1              PWM_INIT();
+  77   1      
+  78   1              _cReceive = 0;
+  79   1              LED = 0;
+  80   1              SPEED = 0;
+  81   1              //PWM0_SET(200);
+  82   1              PWM1_SET(255);
+  83   1              //PWM2_SET(255);
+  84   1              PWM3_SET(40);
+  85   1      
+  86   1              while(1){}
+  87   1      }
+  88          
+  89          
+  90          void serial_interrupt (void) interrupt 4 using 3
+  91          {
+  92   1              unsigned char i;
+  93   1              unsigned int j = 0;
+  94   1      
+  95   1              _pReceive[++_cReceive] = SBUF;
+  96   1              if (_pReceive[_cReceive] == 'S') {
+  97   2                      _cReceive = 0;  
+  98   2              }
+  99   1              
+ 100   1              if (_pReceive[_cReceive] == MESSAGE_END) {
+ 101   2                      
+ 102   2                      j=1;
+ 103   2                      SPEED = 0;
+ 104   2                      for (i = _cReceive - 1; i > 0; i--)
+ 105   2                      {
+ 106   3                              SPEED += (_pReceive[i] - '0') * j;
+ 107   3                              j *= 10;
+ 108   3                      }       
+ 109   2                      PWM3_SET(SPEED);
+ 110   2              }
+ 111   1               
+ 112   1              RI = 0;
+ 113   1      }
+ 114                  
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.00   MAIN                                                                  12/06/2012 22:10:27 PAGE 3   
+
+   CODE SIZE        =    289    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =    257       2
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

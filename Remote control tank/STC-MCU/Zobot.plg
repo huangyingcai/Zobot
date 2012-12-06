@@ -1,0 +1,532 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+\\vmware-host\Shared Folders\Zobot\Remote control tank\STC-MCU\Zobot.uvproj
+Project File Date:  12/06/2012
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+main.c(1): warning C318: can't open file 'STC12C5410AD.H'
+MAIN.C(6): error C202: 'SCON': undefined identifier
+MAIN.C(7): error C202: 'TMOD': undefined identifier
+MAIN.C(8): error C202: 'TH1': undefined identifier
+MAIN.C(9): error C202: 'TL1': undefined identifier
+MAIN.C(10): error C202: 'TR1': undefined identifier
+MAIN.C(11): error C202: 'REN': undefined identifier
+MAIN.C(12): error C202: 'ES': undefined identifier
+MAIN.C(13): error C202: 'EA': undefined identifier
+MAIN.C(18): error C202: 'CMOD': undefined identifier
+MAIN.C(19): error C202: 'CL': undefined identifier
+MAIN.C(20): error C202: 'CH': undefined identifier
+MAIN.C(21): error C202: 'CCAPM0': undefined identifier
+MAIN.C(22): error C202: 'CCAP0L': undefined identifier
+MAIN.C(23): error C202: 'CCAP0H': undefined identifier
+MAIN.C(25): error C202: 'CCAPM1': undefined identifier
+MAIN.C(26): error C202: 'CCAP1L': undefined identifier
+MAIN.C(27): error C202: 'CCAP1H': undefined identifier
+MAIN.C(29): error C202: 'CCAPM2': undefined identifier
+MAIN.C(30): error C202: 'CCAP2L': undefined identifier
+MAIN.C(31): error C202: 'CCAP2H': undefined identifier
+MAIN.C(33): error C202: 'CCAPM3': undefined identifier
+MAIN.C(34): error C202: 'CCAP3L': undefined identifier
+MAIN.C(35): error C202: 'CCAP3H': undefined identifier
+MAIN.C(37): error C202: 'CR': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+main.c(1): warning C318: can't open file 'STC12C5410AD.H'
+MAIN.C(6): error C202: 'SCON': undefined identifier
+MAIN.C(7): error C202: 'TMOD': undefined identifier
+MAIN.C(8): error C202: 'TH1': undefined identifier
+MAIN.C(9): error C202: 'TL1': undefined identifier
+MAIN.C(10): error C202: 'TR1': undefined identifier
+MAIN.C(11): error C202: 'REN': undefined identifier
+MAIN.C(12): error C202: 'ES': undefined identifier
+MAIN.C(13): error C202: 'EA': undefined identifier
+MAIN.C(18): error C202: 'CMOD': undefined identifier
+MAIN.C(19): error C202: 'CL': undefined identifier
+MAIN.C(20): error C202: 'CH': undefined identifier
+MAIN.C(21): error C202: 'CCAPM0': undefined identifier
+MAIN.C(22): error C202: 'CCAP0L': undefined identifier
+MAIN.C(23): error C202: 'CCAP0H': undefined identifier
+MAIN.C(25): error C202: 'CCAPM1': undefined identifier
+MAIN.C(26): error C202: 'CCAP1L': undefined identifier
+MAIN.C(27): error C202: 'CCAP1H': undefined identifier
+MAIN.C(29): error C202: 'CCAPM2': undefined identifier
+MAIN.C(30): error C202: 'CCAP2L': undefined identifier
+MAIN.C(31): error C202: 'CCAP2H': undefined identifier
+MAIN.C(33): error C202: 'CCAPM3': undefined identifier
+MAIN.C(34): error C202: 'CCAP3L': undefined identifier
+MAIN.C(35): error C202: 'CCAP3H': undefined identifier
+MAIN.C(37): error C202: 'CR': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITUART?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PWM_INIT?MAIN
+Program Size: data=9.0 xdata=0 code=77
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INITUART?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PWM_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM1_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM3_SET?MAIN
+Program Size: data=9.0 xdata=0 code=97
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(66): error C202: 'LED': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(66): error C202: 'LED': undefined identifier
+MAIN.C(88): error C202: 'LED': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=17.0 xdata=0 code=152
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=17.0 xdata=0 code=152
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=140
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=0 code=142
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(94): warning C276: constant in condition expression
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM3_SET?MAIN
+Program Size: data=18.0 xdata=0 code=161
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(94): warning C276: constant in condition expression
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=166
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(94): warning C276: constant in condition expression
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=166
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(94): warning C276: constant in condition expression
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=166
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(94): warning C276: constant in condition expression
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=166
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=168
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=170
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=170
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=170
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(96): warning C206: 'PEM3_SET': missing function-prototype
+MAIN.C(96): error C267: 'PEM3_SET': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=172
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=175
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(96): warning C260: '=': pointer truncation
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=178
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=178
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=191
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(98): error C193: '>': bad operand type
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=198
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=19.0 xdata=0 code=185
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=19.0 xdata=0 code=183
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=19.0 xdata=0 code=181
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=19.0 xdata=0 code=181
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=185
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=18.0 xdata=0 code=187
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(103): error C202: 'i': undefined identifier
+MAIN.C(104): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(116): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(114): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(114): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(114): error C249: 'DATA': SEGMENT TOO LARGE
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=321
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=321
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=321
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=324
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM0_SET?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PWM2_SET?MAIN
+Program Size: data=17.0 xdata=259 code=325
+creating hex file from "Zobot"...
+"Zobot" - 0 Error(s), 2 Warning(s).
