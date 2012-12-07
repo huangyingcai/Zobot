@@ -1,17 +1,23 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        12/06/2012  22:52:07  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/07/2012  21:50:10  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
 C:\KEIL\C51\BIN\BL51.EXE main.obj TO Zobot RAMSIZE (256)
 
 
-MEMORY MODEL: LARGE
+MEMORY MODEL: LARGE WITH FLOATING POINT ARITHMETIC
 
 
 INPUT MODULES INCLUDED:
   main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?FPADD)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?FPMUL)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?FPDIV)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?FCAST)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?CASTF)
+  C:\KEIL\C51\LIB\C51FPL.LIB (?C?FPGETOPN)
   C:\KEIL\C51\LIB\C51L.LIB (?C_STARTUP)
-  C:\KEIL\C51\LIB\C51L.LIB (?C?IMUL)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?LNEG)
 
 
 LINK MAP OF MODULE:  Zobot (MAIN)
@@ -28,22 +34,24 @@ LINK MAP OF MODULE:  Zobot (MAIN)
 
             * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
             XDATA   0000H     0101H     UNIT         ?XD?MAIN
-            XDATA   0101H     0002H     UNIT         _XDATA_GROUP_
+            XDATA   0101H     0001H     UNIT         _XDATA_GROUP_
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     001FH     UNIT         ?PR?MAIN?MAIN
+            CODE    0003H     001AH     UNIT         ?PR?MAIN?MAIN
+            CODE    001DH     0005H     UNIT         ?PR?_PWM0_SET?MAIN
                     0022H     0001H                  *** GAP ***
             CODE    0023H     0003H     ABSOLUTE     
-            CODE    0026H     00B2H     UNIT         ?PR?SERIAL_INTERRUPT?MAIN
-            CODE    00D8H     0027H     UNIT         ?PR?PWM_INIT?MAIN
-            CODE    00FFH     0015H     UNIT         ?PR?INITUART?MAIN
-            CODE    0114H     0012H     UNIT         ?C?LIB_CODE
-            CODE    0126H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0132H     0005H     UNIT         ?PR?_PWM0_SET?MAIN
-            CODE    0137H     0005H     UNIT         ?PR?_PWM1_SET?MAIN
-            CODE    013CH     0005H     UNIT         ?PR?_PWM2_SET?MAIN
-            CODE    0141H     0005H     UNIT         ?PR?_PWM3_SET?MAIN
+            CODE    0026H     036BH     UNIT         ?C?LIB_CODE
+            CODE    0391H     00E1H     UNIT         ?PR?SERIAL_INTERRUPT?MAIN
+            CODE    0472H     005DH     UNIT         ?PR?_LEFT_WHEEL?MAIN
+            CODE    04CFH     005DH     UNIT         ?PR?_RIGHT_WHEEL?MAIN
+            CODE    052CH     0027H     UNIT         ?PR?PWM_INIT?MAIN
+            CODE    0553H     0015H     UNIT         ?PR?INITUART?MAIN
+            CODE    0568H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0574H     0005H     UNIT         ?PR?_PWM1_SET?MAIN
+            CODE    0579H     0005H     UNIT         ?PR?_PWM2_SET?MAIN
+            CODE    057EH     0005H     UNIT         ?PR?_PWM3_SET?MAIN
 
 
 
@@ -51,23 +59,29 @@ OVERLAY MAP OF MODULE:   Zobot (MAIN)
 
 
 SEGMENT                             XDATA_GROUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 2
+
+
   +--> CALLED SEGMENT             START    LENGTH
 -------------------------------------------------
-?PR?SERIAL_INTERRUPT?MAIN         0101H    0002H
+?PR?SERIAL_INTERRUPT?MAIN         0101H    0001H
+  +--> ?PR?_LEFT_WHEEL?MAIN
+  +--> ?PR?_RIGHT_WHEEL?MAIN
+
+?PR?_LEFT_WHEEL?MAIN              -----    -----
   +--> ?PR?_PWM3_SET?MAIN
+
+?PR?_RIGHT_WHEEL?MAIN             -----    -----
+  +--> ?PR?_PWM1_SET?MAIN
 
 *** NEW ROOT ***************************************************
 
 ?C_C51STARTUP                     -----    -----
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:52:07  PAGE 2
-
-
   +--> ?PR?MAIN?MAIN
 
 ?PR?MAIN?MAIN                     -----    -----
   +--> ?PR?INITUART?MAIN
   +--> ?PR?PWM_INIT?MAIN
-  +--> ?PR?_PWM1_SET?MAIN
   +--> ?PR?_PWM3_SET?MAIN
 
 
@@ -82,8 +96,9 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
+  C:0472H         PUBLIC        _LEFT_WHEEL
   B:00A8H.7       PUBLIC        EA
-  C:00D8H         PUBLIC        PWM_INIT
+  C:052CH         PUBLIC        PWM_INIT
   X:0000H         PUBLIC        _cReceive
   D:00F9H         PUBLIC        CH
   D:00A8H         PUBLIC        IE
@@ -104,6 +119,9 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   D:00DCH         PUBLIC        CCAPM2
   D:00B8H         PUBLIC        IP
   D:00DDH         PUBLIC        CCAPM3
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 3
+
+
   B:0098H.0       PUBLIC        RI
   D:00D9H         PUBLIC        CMOD
   D:00D8H         PUBLIC        CCON
@@ -112,139 +130,198 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
+  B:00B0H.4       PUBLIC        IN1
+  B:00A0H.3       PUBLIC        IN4
   D:008DH         PUBLIC        TH1
   D:008BH         PUBLIC        TL1
-  C:00FFH         PUBLIC        InitUART
-  B:00A0H.2       PUBLIC        ENA
+  X:0100H         PUBLIC        _SPEED
+  C:0553H         PUBLIC        InitUART
+  B:00A0H.5       PUBLIC        ENA
   B:00A0H.1       PUBLIC        LED
+  C:04CFH         PUBLIC        _RIGHT_WHEEL
   B:0088H.6       PUBLIC        TR1
-  C:0026H         PUBLIC        serial_interrupt
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:52:07  PAGE 3
-
-
+  C:0391H         PUBLIC        serial_interrupt
   B:0098H.4       PUBLIC        REN
   D:00C8H         PUBLIC        T2CON
-  C:0132H         PUBLIC        _PWM0_SET
-  X:0100H         PUBLIC        SPEED
-  C:0137H         PUBLIC        _PWM1_SET
-  C:013CH         PUBLIC        _PWM2_SET
-  C:0141H         PUBLIC        _PWM3_SET
+  C:001DH         PUBLIC        _PWM0_SET
+  C:0574H         PUBLIC        _PWM1_SET
+  C:0579H         PUBLIC        _PWM2_SET
+  C:057EH         PUBLIC        _PWM3_SET
   D:00D0H         PUBLIC        PSW
   -------         PROC          INITUART
-  C:00FFH         LINE#         29
-  C:00FFH         LINE#         30
-  C:00FFH         LINE#         32
-  C:0102H         LINE#         33
-  C:0105H         LINE#         34
-  C:0108H         LINE#         35
-  C:010BH         LINE#         36
-  C:010DH         LINE#         37
-  C:010FH         LINE#         38
-  C:0111H         LINE#         39
-  C:0113H         LINE#         40
+  C:0553H         LINE#         41
+  C:0553H         LINE#         42
+  C:0553H         LINE#         44
+  C:0556H         LINE#         45
+  C:0559H         LINE#         46
+  C:055CH         LINE#         47
+  C:055FH         LINE#         48
+  C:0561H         LINE#         49
+  C:0563H         LINE#         50
+  C:0565H         LINE#         51
+  C:0567H         LINE#         52
   -------         ENDPROC       INITUART
   -------         PROC          PWM_INIT
-  C:00D8H         LINE#         44
-  C:00D8H         LINE#         45
-  C:00DBH         LINE#         46
-  C:00DEH         LINE#         47
-  C:00E0H         LINE#         48
-  C:00E3H         LINE#         49
-  C:00E5H         LINE#         50
-  C:00E7H         LINE#         52
-  C:00EAH         LINE#         53
-  C:00ECH         LINE#         54
-  C:00EEH         LINE#         56
-  C:00F1H         LINE#         57
-  C:00F3H         LINE#         58
-  C:00F5H         LINE#         60
-  C:00F8H         LINE#         61
-  C:00FAH         LINE#         62
-  C:00FCH         LINE#         64
-  C:00FEH         LINE#         65
+  C:052CH         LINE#         55
+  C:052CH         LINE#         56
+  C:052FH         LINE#         57
+  C:0532H         LINE#         58
+  C:0534H         LINE#         59
+  C:0537H         LINE#         60
+  C:0539H         LINE#         61
+  C:053BH         LINE#         63
+  C:053EH         LINE#         64
+  C:0540H         LINE#         65
+  C:0542H         LINE#         67
+  C:0545H         LINE#         68
+  C:0547H         LINE#         69
+  C:0549H         LINE#         71
+  C:054CH         LINE#         72
+  C:054EH         LINE#         73
+  C:0550H         LINE#         75
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 4
+
+
+  C:0552H         LINE#         76
   -------         ENDPROC       PWM_INIT
   -------         PROC          _PWM0_SET
   D:0007H         SYMBOL        a
-  C:0132H         LINE#         67
-  C:0132H         LINE#         68
-  C:0134H         LINE#         69
-  C:0136H         LINE#         70
+  C:001DH         LINE#         78
+  C:001DH         LINE#         79
+  C:001FH         LINE#         80
+  C:0021H         LINE#         81
   -------         ENDPROC       _PWM0_SET
   -------         PROC          _PWM1_SET
   D:0007H         SYMBOL        a
-  C:0137H         LINE#         73
-  C:0137H         LINE#         74
-  C:0139H         LINE#         75
-  C:013BH         LINE#         76
+  C:0574H         LINE#         84
+  C:0574H         LINE#         85
+  C:0576H         LINE#         86
+  C:0578H         LINE#         87
   -------         ENDPROC       _PWM1_SET
   -------         PROC          _PWM2_SET
   D:0007H         SYMBOL        a
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:52:07  PAGE 4
-
-
-  C:013CH         LINE#         78
-  C:013CH         LINE#         79
-  C:013EH         LINE#         80
-  C:0140H         LINE#         81
+  C:0579H         LINE#         89
+  C:0579H         LINE#         90
+  C:057BH         LINE#         91
+  C:057DH         LINE#         92
   -------         ENDPROC       _PWM2_SET
   -------         PROC          _PWM3_SET
   D:0007H         SYMBOL        a
-  C:0141H         LINE#         83
-  C:0141H         LINE#         84
-  C:0143H         LINE#         85
-  C:0145H         LINE#         86
+  C:057EH         LINE#         94
+  C:057EH         LINE#         95
+  C:0580H         LINE#         96
+  C:0582H         LINE#         97
   -------         ENDPROC       _PWM3_SET
+  -------         PROC          _LEFT_WHEEL
+  D:0007H         SYMBOL        direction
+  C:0472H         LINE#         99
+  C:0472H         LINE#         100
+  C:0472H         LINE#         101
+  C:0476H         LINE#         102
+  C:0476H         LINE#         103
+  C:0478H         LINE#         104
+  C:04A2H         LINE#         105
+  C:04A4H         LINE#         107
+  C:04A4H         LINE#         108
+  C:04A6H         LINE#         109
+  C:04CEH         LINE#         110
+  C:04CEH         LINE#         111
+  -------         ENDPROC       _LEFT_WHEEL
+  -------         PROC          _RIGHT_WHEEL
+  D:0007H         SYMBOL        direction
+  C:04CFH         LINE#         113
+  C:04CFH         LINE#         114
+  C:04CFH         LINE#         115
+  C:04D3H         LINE#         116
+  C:04D3H         LINE#         117
+  C:04D5H         LINE#         118
+  C:04FAH         LINE#         120
+  C:04FCH         LINE#         122
+  C:04FCH         LINE#         123
+  C:04FEH         LINE#         124
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 5
+
+
+  C:052BH         LINE#         125
+  C:052BH         LINE#         126
+  -------         ENDPROC       _RIGHT_WHEEL
   -------         PROC          MAIN
-  C:0003H         LINE#         88
-  C:0003H         LINE#         89
-  C:0003H         LINE#         90
-  C:0005H         LINE#         91
-  C:0008H         LINE#         92
-  C:000BH         LINE#         94
-  C:0010H         LINE#         95
-  C:0012H         LINE#         96
-  C:0016H         LINE#         98
-  C:001BH         LINE#         100
-  C:0020H         LINE#         102
+  C:0003H         LINE#         128
+  C:0003H         LINE#         129
+  C:0003H         LINE#         130
+  C:0005H         LINE#         131
+  C:0008H         LINE#         132
+  C:000BH         LINE#         134
+  C:0010H         LINE#         135
+  C:0012H         LINE#         136
+  C:0016H         LINE#         140
+  C:001BH         LINE#         142
   -------         ENDPROC       MAIN
   -------         PROC          SERIAL_INTERRUPT
   -------         DO            
-  D:001BH         SYMBOL        i
-  X:0101H         SYMBOL        j
+  D:001EH         SYMBOL        i
+  D:001FH         SYMBOL        j
+  X:0101H         SYMBOL        FLAG
   -------         ENDDO         
-  C:0026H         LINE#         106
-  C:0033H         LINE#         109
-  C:003AH         LINE#         111
-  C:004CH         LINE#         112
-  C:005DH         LINE#         113
-  C:0062H         LINE#         114
-  C:0062H         LINE#         116
-  C:0074H         LINE#         118
-  C:007BH         LINE#         119
-  C:0080H         LINE#         120
-  C:008CH         LINE#         121
-  C:008CH         LINE#         122
-  C:00A9H         LINE#         123
-  C:00C0H         LINE#         124
-  C:00C3H         LINE#         125
-  C:00CBH         LINE#         126
-  C:00CBH         LINE#         128
-  C:00CDH         LINE#         129
+  C:0391H         LINE#         147
+  C:039EH         LINE#         152
+  C:03B0H         LINE#         153
+  C:03DAH         LINE#         154
+  C:03ECH         LINE#         155
+  C:03F1H         LINE#         157
+  C:03F1H         LINE#         159
+  C:0403H         LINE#         161
+  C:0405H         LINE#         162
+  C:0409H         LINE#         163
+  C:0415H         LINE#         164
+  C:0415H         LINE#         165
+  C:042CH         LINE#         166
+  C:0432H         LINE#         167
+  C:0435H         LINE#         168
+  C:0435H         LINE#         171
+  C:0437H         LINE#         172
+  C:0443H         LINE#         173
+  C:044FH         LINE#         174
+  C:045BH         LINE#         175
+  C:0467H         LINE#         177
   -------         ENDPROC       SERIAL_INTERRUPT
   -------         ENDMOD        MAIN
 
-  -------         MODULE        ?C?IMUL
-  C:0114H         PUBLIC        ?C?IMUL
-  -------         ENDMOD        ?C?IMUL
+  -------         MODULE        ?C?FPADD
+  C:002DH         PUBLIC        ?C?FPADD
+  C:0029H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPMUL
+  C:011EH         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:0227H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 6
+
+
+
+  -------         MODULE        ?C?FCAST
+  C:02CEH         PUBLIC        ?C?FCASTC
+  C:02C9H         PUBLIC        ?C?FCASTI
+  C:02C4H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:0302H         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        ?C?LNEG
+  C:0383H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_PWM0_SET?MAIN
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/06/2012  22:52:07  PAGE 5
-
-
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_PWM2_SET?MAIN
 
-Program Size: data=17.0 xdata=259 code=325
+Program Size: data=17.0 xdata=258 code=1410
 LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

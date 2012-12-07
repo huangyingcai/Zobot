@@ -1,7 +1,8 @@
 #include "STC12C5410AD.H"
 
-#define MESSAGE_END 'Z'
- 
+
+#define MOVE_FORWARD 1
+#define MOVE_BACKWARD 0 
 
 /*
 	串口信息开头标识：
@@ -12,18 +13,29 @@
 
 	串口信息结束标识：
 	Z
-
 */
+#define LEFT_WHEEL_FORWARD 'A'
+#define LEFT_WHEEL_BACKWARD 'B'
+#define RIGHT_WHEEL_FORWARD 'C'
+#define RIGHT_WHEEL_BACKWARD 'D'
+#define MESSAGE_END 'Z'
 
 
 sbit LED = P2 ^ 1;
-sbit ENA = P2 ^ 2;
 
-volatile unsigned char SPEED;
+sbit ENA = P2 ^ 5;
+sbit IN1 = P3 ^ 4; 
+
+sbit ENB = P2 ^ 2;
+sbit IN4 = P2 ^ 3;
+/*
+	IN2 : PWM3 P2.4
+	IN3 : PWM1 P3.5	
+*/
+
+volatile unsigned char _SPEED;
 volatile unsigned char _cReceive;
 volatile char _pReceive[255];
-
-
 
 
 void InitUART  (void)
@@ -38,7 +50,6 @@ void InitUART  (void)
 	ES = 1; //允许串行口中断
 	EA = 1; //开启总中断
 }
-
 
 
 void PWM_INIT (void) {
@@ -85,17 +96,50 @@ void PWM3_SET (unsigned char a /* 0~255 */) {
 	CCAP3H = a;
 }
 
-void main (void)
+void LEFT_WHEEL(unsigned char direction/* 0 ~ 100*/)
 {
 	ENA = 1;
+	if (direction == MOVE_FORWARD)
+	{
+		IN1 = 1;
+		PWM3_SET((unsigned char)(_SPEED / 100.0 * 195 + 60));   //60-255
+	} 
+	else 
+	{
+	 	IN1 = 0;
+		PWM3_SET(200 - (unsigned char)(_SPEED / 100.0 * 200 ));	//0-200
+	}
+	
+	if (_SPEED == 0) ENA = 0; 
+}
+
+void RIGHT_WHEEL(unsigned char direction/* 0 ~ 100 */)
+{
+	ENB = 1;
+ 	if (direction == MOVE_FORWARD)
+	{
+		IN4 = 0;
+		PWM1_SET(200 - (unsigned char)(_SPEED / 100.0 * 200 ));	//0-200
+		
+	}
+	else
+	{
+		IN4 = 1;
+		PWM1_SET((unsigned char)(_SPEED / 100.0 * 195 + 60));   //60-255
+	}
+	if (_SPEED == 0) ENA = 1;
+}
+
+void main (void)
+{
 	InitUART();
 	PWM_INIT();
 
 	_cReceive = 0;
 	LED = 0;
-	SPEED = 0;
+	_SPEED = 0;
 	//PWM0_SET(200);
-	PWM1_SET(255);
+	//PWM1_SET(255);
 	//PWM2_SET(255);
 	PWM3_SET(40);
 
@@ -103,28 +147,36 @@ void main (void)
 }
 
 
+
 void serial_interrupt (void) interrupt 4 using 3
 {
-	unsigned char i;
-	unsigned int j = 0;
+	unsigned char i, j, FLAG;
+
 
 	_pReceive[++_cReceive] = SBUF;
-	if (_pReceive[_cReceive] == 'S') {
+	if (_pReceive[_cReceive] >= 'A' && _pReceive[_cReceive] <= 'D') {
+		FLAG = _pReceive[_cReceive];
 		_cReceive = 0;	
+
 	}
 	
 	if (_pReceive[_cReceive] == MESSAGE_END) {
 		
 		j=1;
-		SPEED = 0;
+		_SPEED = 0;
 		for (i = _cReceive - 1; i > 0; i--)
 		{
-			SPEED += (_pReceive[i] - '0') * j;
+			_SPEED += (_pReceive[i] - '0') * j;
 			j *= 10;
-		} 	
-		PWM3_SET(SPEED);
+		}
 	}
+	
 	 
 	RI = 0;
+	if (FLAG == LEFT_WHEEL_FORWARD) LEFT_WHEEL(MOVE_FORWARD);
+	if (FLAG ==	LEFT_WHEEL_BACKWARD) LEFT_WHEEL(MOVE_BACKWARD);
+	if (FLAG == RIGHT_WHEEL_FORWARD) RIGHT_WHEEL(MOVE_FORWARD);
+	if (FLAG == RIGHT_WHEEL_BACKWARD) RIGHT_WHEEL(MOVE_BACKWARD);
+
 }
 	
