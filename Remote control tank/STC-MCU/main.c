@@ -127,7 +127,7 @@ void RIGHT_WHEEL(unsigned char direction/* 0 ~ 100 */)
 		IN4 = 1;
 		PWM1_SET((unsigned char)(_SPEED / 100.0 * 195 + 60));   //60-255
 	}
-	if (_SPEED == 0) ENA = 1;
+	if (_SPEED == 0) ENB = 0;
 }
 
 void main (void)
@@ -139,9 +139,8 @@ void main (void)
 	LED = 0;
 	_SPEED = 0;
 	//PWM0_SET(200);
-	//PWM1_SET(255);
 	//PWM2_SET(255);
-	PWM3_SET(40);
+
 
 	while(1){}
 }
