@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		021A41F41677601300CC7A6B /* MZMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 021A41F21677601300CC7A6B /* MZMainWindow.m */; };
+		021A41F51677601300CC7A6B /* MZMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021A41F31677601300CC7A6B /* MZMainWindow.xib */; };
+		021A41FC1677631500CC7A6B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021A41FB1677631500CC7A6B /* Carbon.framework */; };
+		02AF99251676E8240050923C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AF99241676E8240050923C /* Cocoa.framework */; };
+		02AF992F1676E8240050923C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02AF992D1676E8240050923C /* InfoPlist.strings */; };
+		02AF99311676E8240050923C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AF99301676E8240050923C /* main.m */; };
+		02AF99351676E8240050923C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02AF99331676E8240050923C /* Credits.rtf */; };
+		02AF99381676E8240050923C /* MZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AF99371676E8240050923C /* MZAppDelegate.m */; };
+		02AF993B1676E8240050923C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AF99391676E8240050923C /* MainMenu.xib */; };
+		02AF99431676E8240050923C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AF99421676E8240050923C /* SenTestingKit.framework */; };
+		02AF99441676E8240050923C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AF99241676E8240050923C /* Cocoa.framework */; };
+		02AF994C1676E8240050923C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02AF994A1676E8240050923C /* InfoPlist.strings */; };
+		02AF994F1676E8250050923C /* ZobotControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AF994E1676E8250050923C /* ZobotControllerTests.m */; };
+		02AF995E1676E85C0050923C /* MZRequestSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AF995D1676E85C0050923C /* MZRequestSender.m */; };
+		02AF99681676EB020050923C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AF99671676EB020050923C /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02AF99451676E8240050923C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02AF99171676E8240050923C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02AF991F1676E8240050923C;
+			remoteInfo = ZobotController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		021A41F21677601300CC7A6B /* MZMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZMainWindow.m; sourceTree = "<group>"; };
+		021A41F31677601300CC7A6B /* MZMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZMainWindow.xib; sourceTree = "<group>"; };
+		021A41F61677602000CC7A6B /* MZMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZMainWindow.h; sourceTree = "<group>"; };
+		021A41FB1677631500CC7A6B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		02AF99201676E8240050923C /* ZobotController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZobotController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AF99241676E8240050923C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		02AF99271676E8240050923C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		02AF99281676E8240050923C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		02AF99291676E8240050923C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		02AF992C1676E8240050923C /* ZobotController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZobotController-Info.plist"; sourceTree = "<group>"; };
+		02AF992E1676E8240050923C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02AF99301676E8240050923C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02AF99321676E8240050923C /* ZobotController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZobotController-Prefix.pch"; sourceTree = "<group>"; };
+		02AF99341676E8240050923C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		02AF99361676E8240050923C /* MZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZAppDelegate.h; sourceTree = "<group>"; };
+		02AF99371676E8240050923C /* MZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZAppDelegate.m; sourceTree = "<group>"; };
+		02AF993A1676E8240050923C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		02AF99411676E8240050923C /* ZobotControllerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZobotControllerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02AF99421676E8240050923C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		02AF99491676E8240050923C /* ZobotControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZobotControllerTests-Info.plist"; sourceTree = "<group>"; };
+		02AF994B1676E8240050923C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02AF994D1676E8250050923C /* ZobotControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZobotControllerTests.h; sourceTree = "<group>"; };
+		02AF994E1676E8250050923C /* ZobotControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZobotControllerTests.m; sourceTree = "<group>"; };
+		02AF995C1676E85C0050923C /* MZRequestSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZRequestSender.h; sourceTree = "<group>"; };
+		02AF995D1676E85C0050923C /* MZRequestSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZRequestSender.m; sourceTree = "<group>"; };
+		02AF99671676EB020050923C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02AF991D1676E8240050923C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				021A41FC1677631500CC7A6B /* Carbon.framework in Frameworks */,
+				02AF99681676EB020050923C /* WebKit.framework in Frameworks */,
+				02AF99251676E8240050923C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AF993D1676E8240050923C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AF99431676E8240050923C /* SenTestingKit.framework in Frameworks */,
+				02AF99441676E8240050923C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02AF99151676E8240050923C = {
+			isa = PBXGroup;
+			children = (
+				021A41F61677602000CC7A6B /* MZMainWindow.h */,
+				021A41F21677601300CC7A6B /* MZMainWindow.m */,
+				021A41F31677601300CC7A6B /* MZMainWindow.xib */,
+				02AF992A1676E8240050923C /* ZobotController */,
+				02AF99471676E8240050923C /* ZobotControllerTests */,
+				02AF99231676E8240050923C /* Frameworks */,
+				02AF99211676E8240050923C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02AF99211676E8240050923C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02AF99201676E8240050923C /* ZobotController.app */,
+				02AF99411676E8240050923C /* ZobotControllerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02AF99231676E8240050923C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				021A41FB1677631500CC7A6B /* Carbon.framework */,
+				02AF99671676EB020050923C /* WebKit.framework */,
+				02AF99241676E8240050923C /* Cocoa.framework */,
+				02AF99421676E8240050923C /* SenTestingKit.framework */,
+				02AF99261676E8240050923C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02AF99261676E8240050923C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02AF99271676E8240050923C /* AppKit.framework */,
+				02AF99281676E8240050923C /* CoreData.framework */,
+				02AF99291676E8240050923C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		02AF992A1676E8240050923C /* ZobotController */ = {
+			isa = PBXGroup;
+			children = (
+				02AF99361676E8240050923C /* MZAppDelegate.h */,
+				02AF99371676E8240050923C /* MZAppDelegate.m */,
+				02AF99391676E8240050923C /* MainMenu.xib */,
+				02AF992B1676E8240050923C /* Supporting Files */,
+				02AF995C1676E85C0050923C /* MZRequestSender.h */,
+				02AF995D1676E85C0050923C /* MZRequestSender.m */,
+			);
+			path = ZobotController;
+			sourceTree = "<group>";
+		};
+		02AF992B1676E8240050923C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02AF992C1676E8240050923C /* ZobotController-Info.plist */,
+				02AF992D1676E8240050923C /* InfoPlist.strings */,
+				02AF99301676E8240050923C /* main.m */,
+				02AF99321676E8240050923C /* ZobotController-Prefix.pch */,
+				02AF99331676E8240050923C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02AF99471676E8240050923C /* ZobotControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				02AF994D1676E8250050923C /* ZobotControllerTests.h */,
+				02AF994E1676E8250050923C /* ZobotControllerTests.m */,
+				02AF99481676E8240050923C /* Supporting Files */,
+			);
+			path = ZobotControllerTests;
+			sourceTree = "<group>";
+		};
+		02AF99481676E8240050923C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02AF99491676E8240050923C /* ZobotControllerTests-Info.plist */,
+				02AF994A1676E8240050923C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02AF991F1676E8240050923C /* ZobotController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AF99521676E8250050923C /* Build configuration list for PBXNativeTarget "ZobotController" */;
+			buildPhases = (
+				02AF991C1676E8240050923C /* Sources */,
+				02AF991D1676E8240050923C /* Frameworks */,
+				02AF991E1676E8240050923C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZobotController;
+			productName = ZobotController;
+			productReference = 02AF99201676E8240050923C /* ZobotController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02AF99401676E8240050923C /* ZobotControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02AF99551676E8250050923C /* Build configuration list for PBXNativeTarget "ZobotControllerTests" */;
+			buildPhases = (
+				02AF993C1676E8240050923C /* Sources */,
+				02AF993D1676E8240050923C /* Frameworks */,
+				02AF993E1676E8240050923C /* Resources */,
+				02AF993F1676E8240050923C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02AF99461676E8240050923C /* PBXTargetDependency */,
+			);
+			name = ZobotControllerTests;
+			productName = ZobotControllerTests;
+			productReference = 02AF99411676E8240050923C /* ZobotControllerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02AF99171676E8240050923C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MZ;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = MartianZ;
+			};
+			buildConfigurationList = 02AF991A1676E8240050923C /* Build configuration list for PBXProject "ZobotController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 02AF99151676E8240050923C;
+			productRefGroup = 02AF99211676E8240050923C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02AF991F1676E8240050923C /* ZobotController */,
+				02AF99401676E8240050923C /* ZobotControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02AF991E1676E8240050923C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AF992F1676E8240050923C /* InfoPlist.strings in Resources */,
+				02AF99351676E8240050923C /* Credits.rtf in Resources */,
+				02AF993B1676E8240050923C /* MainMenu.xib in Resources */,
+				021A41F51677601300CC7A6B /* MZMainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AF993E1676E8240050923C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AF994C1676E8240050923C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02AF993F1676E8240050923C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02AF991C1676E8240050923C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AF99311676E8240050923C /* main.m in Sources */,
+				02AF99381676E8240050923C /* MZAppDelegate.m in Sources */,
+				02AF995E1676E85C0050923C /* MZRequestSender.m in Sources */,
+				021A41F41677601300CC7A6B /* MZMainWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02AF993C1676E8240050923C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AF994F1676E8250050923C /* ZobotControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02AF99461676E8240050923C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02AF991F1676E8240050923C /* ZobotController */;
+			targetProxy = 02AF99451676E8240050923C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		02AF992D1676E8240050923C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02AF992E1676E8240050923C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		02AF99331676E8240050923C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02AF99341676E8240050923C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		02AF99391676E8240050923C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02AF993A1676E8240050923C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		02AF994A1676E8240050923C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02AF994B1676E8240050923C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02AF99501676E8250050923C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		02AF99511676E8250050923C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		02AF99531676E8250050923C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZobotController/ZobotController-Prefix.pch";
+				INFOPLIST_FILE = "ZobotController/ZobotController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		02AF99541676E8250050923C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZobotController/ZobotController-Prefix.pch";
+				INFOPLIST_FILE = "ZobotController/ZobotController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		02AF99561676E8250050923C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZobotController.app/Contents/MacOS/ZobotController";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZobotController/ZobotController-Prefix.pch";
+				INFOPLIST_FILE = "ZobotControllerTests/ZobotControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		02AF99571676E8250050923C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZobotController.app/Contents/MacOS/ZobotController";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZobotController/ZobotController-Prefix.pch";
+				INFOPLIST_FILE = "ZobotControllerTests/ZobotControllerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02AF991A1676E8240050923C /* Build configuration list for PBXProject "ZobotController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AF99501676E8250050923C /* Debug */,
+				02AF99511676E8250050923C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AF99521676E8250050923C /* Build configuration list for PBXNativeTarget "ZobotController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AF99531676E8250050923C /* Debug */,
+				02AF99541676E8250050923C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02AF99551676E8250050923C /* Build configuration list for PBXNativeTarget "ZobotControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02AF99561676E8250050923C /* Debug */,
+				02AF99571676E8250050923C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 02AF99171676E8240050923C /* Project object */;
+}

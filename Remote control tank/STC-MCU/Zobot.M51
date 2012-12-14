@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        12/07/2012  21:50:10  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/12/2012  20:48:43  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -38,41 +38,51 @@ LINK MAP OF MODULE:  Zobot (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     001AH     UNIT         ?PR?MAIN?MAIN
-            CODE    001DH     0005H     UNIT         ?PR?_PWM0_SET?MAIN
+            CODE    0003H     0015H     UNIT         ?PR?INITUART?MAIN
+            CODE    0018H     0005H     UNIT         ?PR?_PWM0_SET?MAIN
+            CODE    001DH     0005H     UNIT         ?PR?_PWM1_SET?MAIN
                     0022H     0001H                  *** GAP ***
             CODE    0023H     0003H     ABSOLUTE     
             CODE    0026H     036BH     UNIT         ?C?LIB_CODE
-            CODE    0391H     00E1H     UNIT         ?PR?SERIAL_INTERRUPT?MAIN
-            CODE    0472H     005DH     UNIT         ?PR?_LEFT_WHEEL?MAIN
-            CODE    04CFH     005DH     UNIT         ?PR?_RIGHT_WHEEL?MAIN
-            CODE    052CH     0027H     UNIT         ?PR?PWM_INIT?MAIN
-            CODE    0553H     0015H     UNIT         ?PR?INITUART?MAIN
-            CODE    0568H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0574H     0005H     UNIT         ?PR?_PWM1_SET?MAIN
-            CODE    0579H     0005H     UNIT         ?PR?_PWM2_SET?MAIN
-            CODE    057EH     0005H     UNIT         ?PR?_PWM3_SET?MAIN
+            CODE    0391H     010AH     UNIT         ?PR?SERIAL_INTERRUPT?MAIN
+            CODE    049BH     0067H     UNIT         ?PR?_LEFT_WHEEL?MAIN
+            CODE    0502H     0067H     UNIT         ?PR?_RIGHT_WHEEL?MAIN
+            CODE    0569H     005CH     UNIT         ?PR?_CAMERA_PWM?MAIN
+            CODE    05C5H     003FH     UNIT         ?PR?MAIN?MAIN
+            CODE    0604H     0027H     UNIT         ?PR?PWM_INIT?MAIN
+            CODE    062BH     0014H     UNIT         ?PR?TIMER0INIT?MAIN
+            CODE    063FH     000DH     UNIT         ?PR?DELAY100MS?MAIN
+            CODE    064CH     000DH     UNIT         ?PR?DELAY500MS?MAIN
+            CODE    0659H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0665H     0005H     UNIT         ?PR?_PWM2_SET?MAIN
+            CODE    066AH     0005H     UNIT         ?PR?_PWM3_SET?MAIN
 
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 2
 
 
 OVERLAY MAP OF MODULE:   Zobot (MAIN)
 
 
 SEGMENT                             XDATA_GROUP
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 2
-
-
   +--> CALLED SEGMENT             START    LENGTH
 -------------------------------------------------
 ?PR?SERIAL_INTERRUPT?MAIN         0101H    0001H
   +--> ?PR?_LEFT_WHEEL?MAIN
   +--> ?PR?_RIGHT_WHEEL?MAIN
+  +--> ?PR?_CAMERA_PWM?MAIN
+  +--> ?PR?DELAY500MS?MAIN
 
 ?PR?_LEFT_WHEEL?MAIN              -----    -----
   +--> ?PR?_PWM3_SET?MAIN
 
 ?PR?_RIGHT_WHEEL?MAIN             -----    -----
   +--> ?PR?_PWM1_SET?MAIN
+
+?PR?_CAMERA_PWM?MAIN              -----    -----
+  +--> ?PR?_PWM0_SET?MAIN
+  +--> ?PR?_PWM2_SET?MAIN
 
 *** NEW ROOT ***************************************************
 
@@ -82,7 +92,10 @@ SEGMENT                             XDATA_GROUP
 ?PR?MAIN?MAIN                     -----    -----
   +--> ?PR?INITUART?MAIN
   +--> ?PR?PWM_INIT?MAIN
-  +--> ?PR?_PWM3_SET?MAIN
+  +--> ?PR?_PWM0_SET?MAIN
+  +--> ?PR?TIMER0INIT?MAIN
+  +--> ?PR?DELAY500MS?MAIN
+  +--> ?PR?DELAY100MS?MAIN
 
 
 
@@ -93,17 +106,22 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0569H         PUBLIC        _CAMERA_PWM
   D:0090H         PUBLIC        P1
+  D:0096H         PUBLIC        P2M1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-  C:0472H         PUBLIC        _LEFT_WHEEL
+  C:049BH         PUBLIC        _LEFT_WHEEL
   B:00A8H.7       PUBLIC        EA
-  C:052CH         PUBLIC        PWM_INIT
+  C:0604H         PUBLIC        PWM_INIT
   X:0000H         PUBLIC        _cReceive
   D:00F9H         PUBLIC        CH
   D:00A8H         PUBLIC        IE
   D:00E9H         PUBLIC        CL
   D:00FAH         PUBLIC        CCAP0H
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 3
+
+
   D:00FBH         PUBLIC        CCAP1H
   D:00FCH         PUBLIC        CCAP2H
   D:00FDH         PUBLIC        CCAP3H
@@ -119,143 +137,234 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   D:00DCH         PUBLIC        CCAPM2
   D:00B8H         PUBLIC        IP
   D:00DDH         PUBLIC        CCAPM3
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 3
-
-
   B:0098H.0       PUBLIC        RI
+  B:00A0H.6       PUBLIC        BEEP
   D:00D9H         PUBLIC        CMOD
   D:00D8H         PUBLIC        CCON
-  C:0003H         PUBLIC        main
+  C:05C5H         PUBLIC        main
   D:0099H         PUBLIC        SBUF
   D:0098H         PUBLIC        SCON
   D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
+  D:008EH         PUBLIC        AUXR
   B:00B0H.4       PUBLIC        IN1
+  B:0088H.5       PUBLIC        TF0
+  C:062BH         PUBLIC        Timer0Init
   B:00A0H.3       PUBLIC        IN4
+  D:008CH         PUBLIC        TH0
   D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
   D:008BH         PUBLIC        TL1
   X:0100H         PUBLIC        _SPEED
-  C:0553H         PUBLIC        InitUART
+  C:0003H         PUBLIC        InitUART
   B:00A0H.5       PUBLIC        ENA
+  B:00A0H.2       PUBLIC        ENB
   B:00A0H.1       PUBLIC        LED
-  C:04CFH         PUBLIC        _RIGHT_WHEEL
+  B:0088H.4       PUBLIC        TR0
+  C:0502H         PUBLIC        _RIGHT_WHEEL
   B:0088H.6       PUBLIC        TR1
   C:0391H         PUBLIC        serial_interrupt
+  C:063FH         PUBLIC        Delay100ms
   B:0098H.4       PUBLIC        REN
   D:00C8H         PUBLIC        T2CON
-  C:001DH         PUBLIC        _PWM0_SET
-  C:0574H         PUBLIC        _PWM1_SET
-  C:0579H         PUBLIC        _PWM2_SET
-  C:057EH         PUBLIC        _PWM3_SET
+  C:064CH         PUBLIC        Delay500ms
+  C:0018H         PUBLIC        _PWM0_SET
+  C:001DH         PUBLIC        _PWM1_SET
+  C:0665H         PUBLIC        _PWM2_SET
+  C:066AH         PUBLIC        _PWM3_SET
   D:00D0H         PUBLIC        PSW
   -------         PROC          INITUART
-  C:0553H         LINE#         41
-  C:0553H         LINE#         42
-  C:0553H         LINE#         44
-  C:0556H         LINE#         45
-  C:0559H         LINE#         46
-  C:055CH         LINE#         47
-  C:055FH         LINE#         48
-  C:0561H         LINE#         49
-  C:0563H         LINE#         50
-  C:0565H         LINE#         51
-  C:0567H         LINE#         52
+  C:0003H         LINE#         50
+  C:0003H         LINE#         51
+  C:0003H         LINE#         53
+  C:0006H         LINE#         54
+  C:0009H         LINE#         55
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 4
+
+
+  C:000CH         LINE#         56
+  C:000FH         LINE#         57
+  C:0011H         LINE#         58
+  C:0013H         LINE#         59
+  C:0015H         LINE#         60
+  C:0017H         LINE#         61
   -------         ENDPROC       INITUART
   -------         PROC          PWM_INIT
-  C:052CH         LINE#         55
-  C:052CH         LINE#         56
-  C:052FH         LINE#         57
-  C:0532H         LINE#         58
-  C:0534H         LINE#         59
-  C:0537H         LINE#         60
-  C:0539H         LINE#         61
-  C:053BH         LINE#         63
-  C:053EH         LINE#         64
-  C:0540H         LINE#         65
-  C:0542H         LINE#         67
-  C:0545H         LINE#         68
-  C:0547H         LINE#         69
-  C:0549H         LINE#         71
-  C:054CH         LINE#         72
-  C:054EH         LINE#         73
-  C:0550H         LINE#         75
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 4
-
-
-  C:0552H         LINE#         76
+  C:0604H         LINE#         65
+  C:0604H         LINE#         66
+  C:0607H         LINE#         67
+  C:060AH         LINE#         68
+  C:060CH         LINE#         69
+  C:060FH         LINE#         70
+  C:0611H         LINE#         71
+  C:0613H         LINE#         73
+  C:0616H         LINE#         74
+  C:0618H         LINE#         75
+  C:061AH         LINE#         77
+  C:061DH         LINE#         78
+  C:061FH         LINE#         79
+  C:0621H         LINE#         81
+  C:0624H         LINE#         82
+  C:0626H         LINE#         83
+  C:0628H         LINE#         85
+  C:062AH         LINE#         86
   -------         ENDPROC       PWM_INIT
+  -------         PROC          TIMER0INIT
+  C:062BH         LINE#         89
+  C:062BH         LINE#         90
+  C:062BH         LINE#         91
+  C:062EH         LINE#         92
+  C:0631H         LINE#         93
+  C:0634H         LINE#         94
+  C:0637H         LINE#         95
+  C:063AH         LINE#         96
+  C:063CH         LINE#         97
+  C:063EH         LINE#         98
+  -------         ENDPROC       TIMER0INIT
   -------         PROC          _PWM0_SET
   D:0007H         SYMBOL        a
-  C:001DH         LINE#         78
-  C:001DH         LINE#         79
-  C:001FH         LINE#         80
-  C:0021H         LINE#         81
+  C:0018H         LINE#         101
+  C:0018H         LINE#         102
+  C:001AH         LINE#         103
+  C:001CH         LINE#         104
   -------         ENDPROC       _PWM0_SET
   -------         PROC          _PWM1_SET
   D:0007H         SYMBOL        a
-  C:0574H         LINE#         84
-  C:0574H         LINE#         85
-  C:0576H         LINE#         86
-  C:0578H         LINE#         87
+  C:001DH         LINE#         107
+  C:001DH         LINE#         108
+  C:001FH         LINE#         109
+  C:0021H         LINE#         110
   -------         ENDPROC       _PWM1_SET
   -------         PROC          _PWM2_SET
   D:0007H         SYMBOL        a
-  C:0579H         LINE#         89
-  C:0579H         LINE#         90
-  C:057BH         LINE#         91
-  C:057DH         LINE#         92
+  C:0665H         LINE#         112
+  C:0665H         LINE#         113
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 5
+
+
+  C:0667H         LINE#         114
+  C:0669H         LINE#         115
   -------         ENDPROC       _PWM2_SET
   -------         PROC          _PWM3_SET
   D:0007H         SYMBOL        a
-  C:057EH         LINE#         94
-  C:057EH         LINE#         95
-  C:0580H         LINE#         96
-  C:0582H         LINE#         97
+  C:066AH         LINE#         117
+  C:066AH         LINE#         118
+  C:066CH         LINE#         119
+  C:066EH         LINE#         120
   -------         ENDPROC       _PWM3_SET
   -------         PROC          _LEFT_WHEEL
   D:0007H         SYMBOL        direction
-  C:0472H         LINE#         99
-  C:0472H         LINE#         100
-  C:0472H         LINE#         101
-  C:0476H         LINE#         102
-  C:0476H         LINE#         103
-  C:0478H         LINE#         104
-  C:04A2H         LINE#         105
-  C:04A4H         LINE#         107
-  C:04A4H         LINE#         108
-  C:04A6H         LINE#         109
-  C:04CEH         LINE#         110
-  C:04CEH         LINE#         111
+  C:049BH         LINE#         122
+  C:049BH         LINE#         123
+  C:049BH         LINE#         124
+  C:049DH         LINE#         125
+  C:04A1H         LINE#         126
+  C:04A1H         LINE#         127
+  C:04A3H         LINE#         128
+  C:04CDH         LINE#         129
+  C:04CFH         LINE#         131
+  C:04CFH         LINE#         132
+  C:04D1H         LINE#         133
+  C:04F9H         LINE#         134
+  C:04F9H         LINE#         136
+  C:0501H         LINE#         137
   -------         ENDPROC       _LEFT_WHEEL
   -------         PROC          _RIGHT_WHEEL
   D:0007H         SYMBOL        direction
-  C:04CFH         LINE#         113
-  C:04CFH         LINE#         114
-  C:04CFH         LINE#         115
-  C:04D3H         LINE#         116
-  C:04D3H         LINE#         117
-  C:04D5H         LINE#         118
-  C:04FAH         LINE#         120
-  C:04FCH         LINE#         122
-  C:04FCH         LINE#         123
-  C:04FEH         LINE#         124
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 5
-
-
-  C:052BH         LINE#         125
-  C:052BH         LINE#         126
+  C:0502H         LINE#         139
+  C:0502H         LINE#         140
+  C:0502H         LINE#         141
+  C:0504H         LINE#         142
+  C:0508H         LINE#         143
+  C:0508H         LINE#         144
+  C:050AH         LINE#         145
+  C:052FH         LINE#         147
+  C:0531H         LINE#         149
+  C:0531H         LINE#         150
+  C:0533H         LINE#         151
+  C:0560H         LINE#         152
+  C:0560H         LINE#         153
+  C:0568H         LINE#         154
   -------         ENDPROC       _RIGHT_WHEEL
+  -------         PROC          _CAMERA_PWM
+  D:0007H         SYMBOL        direction
+  C:0569H         LINE#         157
+  C:0569H         LINE#         158
+  C:0569H         LINE#         160
+  C:0570H         LINE#         161
+  C:0570H         LINE#         162
+  C:059AH         LINE#         163
+  C:059AH         LINE#         165
+  C:059AH         LINE#         166
+  C:05C4H         LINE#         167
+  C:05C4H         LINE#         168
+  -------         ENDPROC       _CAMERA_PWM
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 6
+
+
+  -------         PROC          DELAY100MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  D:0005H         SYMBOL        k
+  -------         ENDDO         
+  C:063FH         LINE#         171
+  C:063FH         LINE#         172
+  C:063FH         LINE#         175
+  C:0641H         LINE#         176
+  C:0643H         LINE#         177
+  C:0645H         LINE#         179
+  C:0645H         LINE#         181
+  C:0645H         LINE#         182
+  C:0647H         LINE#         183
+  C:0649H         LINE#         184
+  C:064BH         LINE#         185
+  -------         ENDPROC       DELAY100MS
+  -------         PROC          DELAY500MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  D:0005H         SYMBOL        k
+  -------         ENDDO         
+  C:064CH         LINE#         187
+  C:064CH         LINE#         188
+  C:064CH         LINE#         191
+  C:064EH         LINE#         192
+  C:0650H         LINE#         193
+  C:0652H         LINE#         195
+  C:0652H         LINE#         197
+  C:0652H         LINE#         198
+  C:0654H         LINE#         199
+  C:0656H         LINE#         200
+  C:0658H         LINE#         201
+  -------         ENDPROC       DELAY500MS
   -------         PROC          MAIN
-  C:0003H         LINE#         128
-  C:0003H         LINE#         129
-  C:0003H         LINE#         130
-  C:0005H         LINE#         131
-  C:0008H         LINE#         132
-  C:000BH         LINE#         134
-  C:0010H         LINE#         135
-  C:0012H         LINE#         136
-  C:0016H         LINE#         140
-  C:001BH         LINE#         142
+  C:05C5H         LINE#         204
+  C:05C5H         LINE#         205
+  C:05C5H         LINE#         208
+  C:05C8H         LINE#         209
+  C:05CBH         LINE#         211
+  C:05D0H         LINE#         212
+  C:05D2H         LINE#         213
+  C:05D6H         LINE#         214
+  C:05DBH         LINE#         216
+  C:05DEH         LINE#         217
+  C:05E1H         LINE#         219
+  C:05E3H         LINE#         220
+  C:05E6H         LINE#         221
+  C:05E8H         LINE#         224
+  C:05E8H         LINE#         225
+  C:05EAH         LINE#         226
+  C:05F3H         LINE#         227
+  C:05F5H         LINE#         228
+  C:05F8H         LINE#         229
+  C:05FAH         LINE#         230
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 7
+
+
+  C:05FDH         LINE#         231
+  C:05FFH         LINE#         232
+  C:0602H         LINE#         240
   -------         ENDPROC       MAIN
   -------         PROC          SERIAL_INTERRUPT
   -------         DO            
@@ -263,27 +372,30 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   D:001FH         SYMBOL        j
   X:0101H         SYMBOL        FLAG
   -------         ENDDO         
-  C:0391H         LINE#         147
-  C:039EH         LINE#         152
-  C:03B0H         LINE#         153
-  C:03DAH         LINE#         154
-  C:03ECH         LINE#         155
-  C:03F1H         LINE#         157
-  C:03F1H         LINE#         159
-  C:0403H         LINE#         161
-  C:0405H         LINE#         162
-  C:0409H         LINE#         163
-  C:0415H         LINE#         164
-  C:0415H         LINE#         165
-  C:042CH         LINE#         166
-  C:0432H         LINE#         167
-  C:0435H         LINE#         168
-  C:0435H         LINE#         171
-  C:0437H         LINE#         172
-  C:0443H         LINE#         173
-  C:044FH         LINE#         174
-  C:045BH         LINE#         175
-  C:0467H         LINE#         177
+  C:0391H         LINE#         245
+  C:039EH         LINE#         250
+  C:03B0H         LINE#         251
+  C:03DAH         LINE#         252
+  C:03ECH         LINE#         253
+  C:03F1H         LINE#         255
+  C:03F1H         LINE#         257
+  C:0406H         LINE#         259
+  C:0408H         LINE#         260
+  C:040CH         LINE#         261
+  C:0418H         LINE#         262
+  C:0418H         LINE#         263
+  C:042FH         LINE#         264
+  C:0435H         LINE#         265
+  C:0438H         LINE#         267
+  C:0444H         LINE#         268
+  C:0450H         LINE#         269
+  C:045CH         LINE#         270
+  C:0468H         LINE#         271
+  C:0474H         LINE#         272
+  C:0480H         LINE#         273
+  C:048EH         LINE#         274
+  C:048EH         LINE#         276
+  C:0490H         LINE#         279
   -------         ENDPROC       SERIAL_INTERRUPT
   -------         ENDMOD        MAIN
 
@@ -299,9 +411,6 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   -------         MODULE        ?C?FPDIV
   C:0227H         PUBLIC        ?C?FPDIV
   -------         ENDMOD        ?C?FPDIV
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/07/2012  21:50:10  PAGE 6
-
-
 
   -------         MODULE        ?C?FCAST
   C:02CEH         PUBLIC        ?C?FCASTC
@@ -310,6 +419,9 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   -------         ENDMOD        ?C?FCAST
 
   -------         MODULE        ?C?CASTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2012  20:48:43  PAGE 8
+
+
   C:0302H         PUBLIC        ?C?CASTF
   -------         ENDMOD        ?C?CASTF
 
@@ -317,11 +429,5 @@ SYMBOL TABLE OF MODULE:  Zobot (MAIN)
   C:0383H         PUBLIC        ?C?LNEG
   -------         ENDMOD        ?C?LNEG
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PWM0_SET?MAIN
-
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PWM2_SET?MAIN
-
-Program Size: data=17.0 xdata=258 code=1410
-LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
+Program Size: data=17.0 xdata=258 code=1646
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

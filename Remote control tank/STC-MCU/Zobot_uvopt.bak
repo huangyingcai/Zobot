@@ -141,7 +141,7 @@
         <aSer4>0</aSer4>
         <StkLoc>0</StkLoc>
         <TrcWin>0</TrcWin>
-        <newCpu>1</newCpu>
+        <newCpu>0</newCpu>
         <uProt>0</uProt>
       </DebugFlag>
       <LintExecutable></LintExecutable>
@@ -160,10 +160,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>1</ColumnNumber>
+      <ColumnNumber>71</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>31</TopLine>
-      <CurrentLine>53</CurrentLine>
+      <TopLine>242</TopLine>
+      <CurrentLine>242</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -1515,9 +1515,9 @@
       <Documents>
         <Doc>
           <Name>.\main.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>31</TopLine>
-          <CurrentLine>52</CurrentLine>
+          <ColumnNumber>71</ColumnNumber>
+          <TopLine>242</TopLine>
+          <CurrentLine>242</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
